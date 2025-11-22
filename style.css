@@ -1,0 +1,501 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reset dan gaya dasar */
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: rgba(3, 21, 64, 0.9);
+  display: flex;
+  justify-content: flex-end; /* biar langsung ke kanan */
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  display: none; /* sembunyikan total */
+}
+
+
+/* Navbar */
+.navbar a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #00abf0;
+  transform: scale(1.1);
+}
+
+/* Section Home */
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  background: linear-gradient(-90deg, #031540 65%, #fff 35%);
+}
+
+/* Gambar di sisi kiri */
+.home-image {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: #031540;
+  border-radius: 50%;
+  border: 25px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  margin-left: 50px;
+  overflow: hidden;
+}
+
+.home-image img {
+  position: absolute;
+  bottom: 0px; /* sedikit turun agar kepala tidak terpotong */
+  width: 450px; /* perbesar agar pas dalam lingkaran */
+  border-radius: 50%;
+  object-fit: cover;
+  filter: brightness(1.15) contrast(1.1) drop-shadow(0 0 20px rgba(0, 171, 240, 0.45));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.home-image img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.25) contrast(1.15) drop-shadow(0 0 25px rgba(0, 171, 240, 0.6));
+}
+
+/* Konten sisi kanan */
+.home-content {
+  max-width: 600px;
+  color: #fff;
+  text-align: right;
+}
+
+.home-content h1 {
+  font-size: 55px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.home-content h3 {
+  font-size: 30px;
+  color:transparent;
+  -webkit-text-stroke: 0.5px #fff;
+  background-image: linear-gradient(#00abf0, #00abf0);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position: -410px 0;
+  animation: animateText 6s linear infinite;
+}
+
+  @keyframes animateText {
+    0%, 95%,100% {
+      background-position: -410px 0;
+    }
+    65%, 85% {
+      background-position: 0 0;
+    }
+  }
+
+
+.home-content p {
+  font-size: 16px;
+  margin: 20px 0 40px;
+  color: #fff;
+}
+
+/* Ikon Sosial */
+.home-sci {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #00abf0;
+  text-decoration: none;
+  margin-left: 15px;
+  transition: all 0.3s ease;
+}
+
+.home-sci a:hover {
+  background: #00abf0;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.home-sci a:active {
+  transform: scale(0.9);
+}
+
+/* Tombol Download */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #00abf0;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn:hover {
+  background: #008ecf;
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* ======== ABOUT SECTION ======== */
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 100px 10%;
+  background: #fff;
+  color: #031540;
+}
+
+.about-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-img img {
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 171, 240, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(0, 171, 240, 0.6);
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content .heading {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #031540;
+}
+
+.about-content .heading span {
+  color: #00abf0;
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-content .btn {
+  background: #00abf0;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.about-content .btn:hover {
+  background: #008ecf;
+  transform: scale(1.05);
+}
+
+/* ======== SERVICES SECTION ======== */
+.services {
+  background: #031540;
+  color: #fff;
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.services .heading {
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.services .heading span {
+  color: #00abf0;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.service-box {
+  background: #04255c;
+  border-radius: 12px;
+  padding: 30px;
+  width: 300px;
+  box-shadow: 0 0 15px rgba(0, 171, 240, 0.3);
+  transition: 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0, 171, 240, 0.5);
+}
+
+.service-box i {
+  font-size: 50px;
+  color: #00abf0;
+  margin-bottom: 20px;
+}
+
+.service-box h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* ======== PORTFOLIO SECTION ======== */
+.portfolio {
+  background: #fff;
+  color: #031540;
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.portfolio .heading {
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.portfolio .heading span {
+  color: #00abf0;
+}
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.portfolio-box {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 171, 240, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-box:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-box img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.portfolio-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 171, 240, 0.85);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+  opacity: 1;
+}
+
+/* ======== CONTACT SECTION ======== */
+.contact {
+  background: #031540;
+  color: #fff;
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.contact .heading {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.contact .heading span {
+  color: #00abf0;
+}
+
+.contact form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact .input-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact .input-box input,
+.contact textarea {
+  width: 48%;
+  padding: 12px;
+  font-size: 16px;
+  color: #031540;
+  background: #fff;
+  border-radius: 6px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+}
+
+.contact textarea {
+  width: 100%;
+  resize: none;
+  height: 150px;
+}
+
+.contact .btn {
+  margin-top: 10px;
+  background: #00abf0;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.contact .btn:hover {
+  background: #008ecf;
+  transform: scale(1.05);
+}
+
+/* ==================== RESPONSIVE MOBILE ==================== */
+
+@media (max-width: 768px) {
+
+  /* Atur layout home jadi vertikal */
+  .home {
+    flex-direction: column-reverse;
+    padding: 120px 5% 50px;
+    text-align: center;
+  }
+
+  /* Perkecil gambar bulat */
+  .home-image {
+    width: 260px;
+    height: 260px;
+    border-width: 15px;
+    margin: 0 auto 30px;
+  }
+
+  .home-image img {
+    width: 300px;
+  }
+
+  /* Heading lebih kecil */
+  .home-content h1 {
+    font-size: 32px;
+  }
+  
+  .home-content h3 {
+    font-size: 22px;
+  }
+
+  .home-content p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .home-sci {
+    justify-content: center;
+  }
+
+
+  /* ABOUT */
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+
+  .about-img img {
+    width: 250px;
+    margin-bottom: 20px;
+  }
+
+
+  /* SERVICES */
+  .services-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+
+  /* PORTFOLIO */
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* CONTACT FORM */
+  .contact .input-box {
+    flex-direction: column;
+  }
+
+  .contact .input-box input {
+    width: 100%;
+  }
+}

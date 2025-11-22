@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Rendra Ardika</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HOME SECTION -->
+  <section class="home" id="home">
+    <div class="home-image">
+      <img src="kopi.png" alt="Rendra Ardika">
+    </div>
+
+    <div class="home-content">
+      <h1>Hi, I'm Rendra Ardika</h1>
+      <h3>Data Enthusiast</h3>
+      <p>My name is Rendra Ardika, an Informatics student at Universitas Pembangunan Nasional "Veteran" Jawa Timur. I am interested in data science, machine learning, and data analysis.</p>
+
+     <div class="home-sci">
+  <a href="https://github.com/Rendraardika" target="_blank">
+    <i class='bx bxl-github'></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/rendra-ardika-55152828b/" target="_blank">
+    <i class='bx bxl-linkedin'></i>
+  </a>
+
+  <a href="https://www.instagram.com/rendraaardiii/" target="_blank">
+    <i class='bx bxl-instagram'></i>
+  </a>
+</div>
+
+
+     <a href="CV.pdf" class="btn" download>Download CV</a>
+
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <h2 class="heading">About <span>Me</span></h2>
+      <p>Halo! Saya <b>Rendra Ardika</b>, mahasiswa Informatika di Universitas Pembangunan Nasional "Veteran" Jawa Timur. Saya memiliki minat besar dalam bidang Data Science, Machine Learning, dan Analisis Data.</p>
+      <p>Saat ini saya aktif mengembangkan proyek analisis data serta membangun aplikasi berbasis web.</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+
+    <div class="about-img">
+      <img src="op.jpg" alt="About Rendra Ardika">
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services" id="services">
+    <h2 class="heading">My <span>Services</span></h2>
+    <div class="services-container">
+      <div class="service-box">
+        <i class='bx bx-data'></i>
+        <h3>Data Analysis</h3>
+        <p>Saya membantu menganalisis data untuk menemukan pola penting sebagai dasar keputusan bisnis.</p>
+      </div>
+
+      <div class="service-box">
+        <i class='bx bx-brain'></i>
+        <h3>Machine Learning</h3>
+        <p>Membangun model pembelajaran mesin untuk prediksi, klasifikasi, dan sistem rekomendasi.</p>
+      </div>
+
+      <div class="service-box">
+        <i class='bx bx-code-alt'></i>
+        <h3>Web Development</h3>
+        <p>Membuat website modern dan responsif menggunakan HTML, CSS, dan JavaScript.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO SECTION -->
+  <section class="portfolio" id="portfolio">
+    <h2 class="heading">Latest <span>Projects</span></h2>
+
+    <div class="portfolio-container">
+      <div class="portfolio-box">
+        <img src="op.jpg" alt="">
+        <div class="portfolio-layer">
+          <h4>WiFi Network Project</h4>
+          <p>Dokumentasi dan desain jaringan terpusat untuk SMAN 1 Menganti.</p>
+        </div>
+      </div>
+
+      <div class="portfolio-box">
+        <img src="kopi.png" alt="">
+        <div class="portfolio-layer">
+          <h4>Data Visualization</h4>
+          <p>Dashboard interaktif Tableau untuk analisis wisata Surabaya.</p>
+        </div>
+      </div>
+
+      <div class="portfolio-box">
+        <img src="op.jpg" alt="">
+        <div class="portfolio-layer">
+          <h4>Hill Climbing App</h4>
+          <p>Aplikasi rute terpendek berbasis algoritma Hill Climbing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me!</span></h2>
+
+    <!-- ===================== FORM SUBMIT EMAIL ===================== -->
+    <form action="https://formsubmit.co/ardikarendra50@gmail.com" method="POST">
+
+      <!-- FormSubmit Security -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="Pesan Baru Dari Portfolio Rendra Ardika">
+
+      <div class="input-box">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+      </div>
+
+      <div class="input-box">
+        <input type="text" name="phone" placeholder="Mobile Number">
+        <input type="text" name="subject" placeholder="Email Subject" required>
+      </div>
+
+      <textarea name="message" cols="30" rows="8" placeholder="Your Message" required></textarea>
+
+      <input type="submit" value="Send Message" class="btn">
+    </form>
+  </section>
+
+  <!-- JS NAVBAR -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar a");
+
+    window.onscroll = () => {
+      let current = "";
+      sections.forEach(section => {
+        const top = window.scrollY;
+        const offset = section.offsetTop - 150;
+        if (top >= offset) current = section.getAttribute("id");
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    };
+  </script>
+</body>
+
+</html>
