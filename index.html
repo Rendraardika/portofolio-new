@@ -2,181 +2,287 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Rendra Ardika</title>
-  <link rel="stylesheet" href="style.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Rendra Ardika</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <nav class="navbar">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a> 
+            <a href="#portfolio">Portfolio</a>
+            </nav>
+    </header>
 
-  <!-- HOME SECTION -->
-  <section class="home" id="home">
-    <div class="home-image">
-      <img src="kopi.png" alt="Rendra Ardika">
-    </div>
-
-    <div class="home-content">
-      <h1>Hi, I'm Rendra Ardika</h1>
-      <h3>Data Enthusiast</h3>
-      <p>My name is Rendra Ardika, an Informatics student at Universitas Pembangunan Nasional "Veteran" Jawa Timur. I am interested in data science, machine learning, and data analysis.</p>
-
-     <div class="home-sci">
-  <a href="https://github.com/Rendraardika" target="_blank">
-    <i class='bx bxl-github'></i>
-  </a>
-
-  <a href="https://www.linkedin.com/in/rendra-ardika-55152828b/" target="_blank">
-    <i class='bx bxl-linkedin'></i>
-  </a>
-
-  <a href="https://www.instagram.com/rendraaardiii/" target="_blank">
-    <i class='bx bxl-instagram'></i>
-  </a>
-</div>
-
-
-     <a href="CV.pdf" class="btn" download>Download CV</a>
-
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section class="about" id="about">
-    <div class="about-content">
-      <h2 class="heading">About <span>Me</span></h2>
-      <p>Halo! Saya <b>Rendra Ardika</b>, mahasiswa Informatika di Universitas Pembangunan Nasional "Veteran" Jawa Timur. Saya memiliki minat besar dalam bidang Data Science, Machine Learning, dan Analisis Data.</p>
-      <p>Saat ini saya aktif mengembangkan proyek analisis data serta membangun aplikasi berbasis web.</p>
-      <a href="#" class="btn">Read More</a>
-    </div>
-
-    <div class="about-img">
-      <img src="op.jpg" alt="About Rendra Ardika">
-    </div>
-  </section>
-
-  <!-- SERVICES SECTION -->
-  <section class="services" id="services">
-    <h2 class="heading">My <span>Services</span></h2>
-    <div class="services-container">
-      <div class="service-box">
-        <i class='bx bx-data'></i>
-        <h3>Data Analysis</h3>
-        <p>Saya membantu menganalisis data untuk menemukan pola penting sebagai dasar keputusan bisnis.</p>
-      </div>
-
-      <div class="service-box">
-        <i class='bx bx-brain'></i>
-        <h3>Machine Learning</h3>
-        <p>Membangun model pembelajaran mesin untuk prediksi, klasifikasi, dan sistem rekomendasi.</p>
-      </div>
-
-      <div class="service-box">
-        <i class='bx bx-code-alt'></i>
-        <h3>Web Development</h3>
-        <p>Membuat website modern dan responsif menggunakan HTML, CSS, dan JavaScript.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO SECTION -->
-  <section class="portfolio" id="portfolio">
-    <h2 class="heading">Latest <span>Projects</span></h2>
-
-    <div class="portfolio-container">
-      <div class="portfolio-box">
-        <img src="op.jpg" alt="">
-        <div class="portfolio-layer">
-          <h4>WiFi Network Project</h4>
-          <p>Dokumentasi dan desain jaringan terpusat untuk SMAN 1 Menganti.</p>
+    <section class="home" id="home">
+        <div class="home-image">
+            <img src="kopi.png" alt="Rendra Ardika">
         </div>
-      </div>
 
-      <div class="portfolio-box">
-        <img src="kopi.png" alt="">
-        <div class="portfolio-layer">
-          <h4>Data Visualization</h4>
-          <p>Dashboard interaktif Tableau untuk analisis wisata Surabaya.</p>
+        <div class="home-content">
+            <h1>Hai, saya Rendra Ardika</h1>
+            <h3>Front End Developer</h3>
+            <p>Saya Rendra Ardika, mahasiswa Informatika di Universitas Pembangunan Nasional "Veteran" Jawa Timur. Saya punya ketertarikan pada data analysis, data science. Selain itu, saya juga suka ngembangin tampilan website dan memperhatikan detail UI/UX sebagai front-end developer.</p>
+
+            <div class="home-sci">
+                <a href="https://github.com/Rendraardika" target="_blank">
+                    <i class='bx bxl-github'></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/rendra-ardika-55152828b/" target="_blank">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ardikarendra50@gmail.com" target="_blank">
+    <i class='bx bxl-gmail'></i>
+</a>
+
+                <a href="https://www.instagram.com/rendraaardiii/" target="_blank">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+            </div>
+
+            <a href="RENDRA ARDIKA.pdf" class="btn" download>Download CV</a>
+
         </div>
-      </div>
+    </section>
 
-      <div class="portfolio-box">
-        <img src="op.jpg" alt="">
-        <div class="portfolio-layer">
-          <h4>Hill Climbing App</h4>
-          <p>Aplikasi rute terpendek berbasis algoritma Hill Climbing.</p>
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <p>Halo! Saya <b>Rendra Ardika</b>, mahasiswa Informatika di Universitas Pembangunan Nasional "Veteran" Jawa Timur. Saya memiliki minat besar dalam bidang Data Science, Machine Learning, dan Analisis Data.</p>
+            <p>Saat ini saya aktif mengembangkan proyek analisis data serta membangun aplikasi berbasis web.</p>
+            <a href="#" class="btn">Read More</a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- CONTACT SECTION -->
-  <section class="contact" id="contact">
-    <h2 class="heading">Contact <span>Me!</span></h2>
+        <div class="about-img">
+            <img src="op.jpg" alt="About Rendra Ardika">
+        </div>
+    </section>
 
-    <!-- ===================== FORM SUBMIT EMAIL ===================== -->
-    <form action="https://formsubmit.co/ardikarendra50@gmail.com" method="POST">
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
 
-      <!-- FormSubmit Security -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_subject" value="Pesan Baru Dari Portfolio Rendra Ardika">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
 
-      <div class="input-box">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-      </div>
+                <div class="swiper-slide">
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" class="skill-icon">
+                        <h3>HTML</h3>
+                        <p>Menyusun struktur halaman web dengan semantik.</p>
+                    </div>
+                </div>
 
-      <div class="input-box">
-        <input type="text" name="phone" placeholder="Mobile Number">
-        <input type="text" name="subject" placeholder="Email Subject" required>
-      </div>
+                <div class="swiper-slide">
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" class="skill-icon">
+                        <h3>CSS</h3>
+                        <p>Membuat tampilan modern & responsif.</p>
+                    </div>
+                </div>
 
-      <textarea name="message" cols="30" rows="8" placeholder="Your Message" required></textarea>
+                <div class="swiper-slide">
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/919/919852.png" class="skill-icon">
+                        <h3>Python</h3>
+                        <p>Otomasi, analisis data, dan eksplorasi data.</p>
+                    </div>
+                </div>
 
-      <input type="submit" value="Send Message" class="btn">
-    </form>
-  </section>
+                <div class="swiper-slide">
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" class="skill-icon">
+                        <h3>SQL</h3>
+                        <p>Menyimpan, memfilter, & mengelola data terstruktur.</p>
+                    </div>
+                </div>
 
-  <!-- JS NAVBAR -->
-  <script>
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".navbar a");
+                <div class="swiper-slide">
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" class="skill-icon">
+                        <h3>Excel</h3>
+                        <p>Pembersihan data dan laporan sederhana.</p>
+                    </div>
+                </div>
 
-    window.onscroll = () => {
-      let current = "";
-      sections.forEach(section => {
-        const top = window.scrollY;
-        const offset = section.offsetTop - 150;
-        if (top >= offset) current = section.getAttribute("id");
-      });
+                <div class="swiper-slide">
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968332.png" class="skill-icon" alt="PHP">
+                        <h3>PHP</h3>
+                        <p>Bahasa server-side untuk logika backend & pengembangan web dinamis.</p>
+                    </div>
+                </div>
 
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
-    };
-  </script>
+                <div class="swiper-slide">
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" class="skill-icon" alt="JavaScript">
+                        <h3>JavaScript</h3>
+                        <p>Membuat website interaktif, animasi, & logika di sisi klien.</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" class="skill-icon" alt="React JS">
+                        <h3>React JS</h3>
+                        <p>Membangun antarmuka (UI) modern berbasis komponen yang cepat.</p>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="skill-card">
+                        <img src="https://www.pngmart.com/files/23/Tableau-Logo-PNG-HD.png" alt="Tableau logo"
+                            class="skill-icon">
+                        <h3>Tableau</h3>
+                        <p>Visualisasi data & dashboard interaktif.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Projects</span></h2>
+
+        <div class="portfolio-container">
+
+            <div class="portfolio-card">
+                <div class="portfolio-thumb">
+                    <img src="image.png" alt="Dashboard Tableau">
+
+                    <div class="portfolio-hover">
+
+                        <a href="https://public.tableau.com/views/Rendraardika/Dashboard1?:showVizHome=no"
+                            class="icon-btn" target="_blank">
+                            <i class='bx bx-link-external'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-info">
+                    <h3>Superstore Sales Dashboard</h3>
+                    <p>Analisis penjualan & profit berdasarkan kategori, segmen, dan wilayah.</p>
+                    <div class="tech-badges">
+                        <span>Tableau</span>
+                        <span>Data Viz</span>
+                        <span>Analytics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-thumb">
+                    <img src="2.png">
+                    <div class="portfolio-hover">
+                        <a href="https://rendraardika.github.io/ecowood-furniture-website/" class="icon-btn"
+                            target="_blank">
+                            <i class='bx bx-link-external'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-info">
+                    <h3>EcoWood Furniture Website</h3>
+                    <p>Website front-end portofolio EcoWood Furniture dengan desain responsif.</p>
+                    <div class="tech-badges">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>php</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="portfolio-card">
+                <div class="portfolio-thumb">
+                    <img src="3.png">
+                    <div class="portfolio-hover">
+                        <a href="https://coffeshop-v287.vercel.app/" class="icon-btn" target="_blank">
+                            <i class='bx bx-link-external'></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-info">
+                    <h3>Coffee Shop App</h3>
+                    <p>Aplikasi web coffee shop (React JS).</p>
+                    <div class="tech-badges">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".navbar a");
+
+        window.onscroll = () => {
+            let current = "";
+            sections.forEach(section => {
+                const top = window.scrollY;
+                const offset = section.offsetTop - 150;
+                if (top >= offset) current = section.getAttribute("id");
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                0: { slidesPerView: 1 },
+                600: { slidesPerView: 2 },
+                1000: { slidesPerView: 3 }
+            }
+        });
+    </script>
+
 </body>
 
 </html>
