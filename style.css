@@ -29,7 +29,6 @@ html {
     display: none; /* sembunyikan total */
 }
 
-
 /* Navbar */
 .navbar a {
     font-size: 18px;
@@ -96,8 +95,8 @@ html {
 }
 .home-content h1 {
     display: block;
-    white-space: nowrap; /* cegah turun baris */
-    font-size: 48px; /* kecilkan sedikit biar muat */
+    white-space: normal; /* SUDAH DIPERBAIKI: Agar teks turun ke bawah di layar kecil */
+    font-size: 48px; 
     line-height: 1.2;
 }
 .home-content h3 {
@@ -119,7 +118,6 @@ html {
         background-position: 0 0;
     }
 }
-
 
 .home-content p {
     font-size: 16px;
@@ -247,7 +245,7 @@ html {
     transform: scale(1.05);
 }
 
-/* ======== SERVICES SECTION (Tidak digunakan di HTML, tapi menjaga agar tidak ada error) ======== */
+/* ======== SERVICES SECTION ======== */
 .services {
     background: #031540;
     color: #fff;
@@ -321,9 +319,7 @@ html {
 }
 
 .portfolio-card {
-    /* Mengubah dari deep black-blue ke Slate/Grey-Blue */
     background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
-    /* Opsional: Tambahkan sedikit border radius jika belum ada */
     border-radius: 12px; 
 }
 
@@ -403,7 +399,6 @@ html {
     margin-top: 5px;
     font-size: 13px;
 }
-
 
 /* ======== CONTACT SECTION ======== */
 .contact {
@@ -505,11 +500,10 @@ html {
     width: 90px;
     height: auto;
     margin-bottom: 15px;
-    /* Perbaikan untuk rendering ikon pada slider */
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
-    backface-visibility: hidden; /* Tambahkan ini untuk stabilitas Swiper */
-    transform: translateZ(0); /* Tambahkan ini untuk stabilitas Swiper */
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .skill-card h3 {
@@ -532,14 +526,98 @@ html {
     background: #00abf0;
 }
 .tableau-icon {
-  height: 70px !important;
-  width: auto;
-  filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
+    height: 70px !important;
+    width: auto;
+    filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
 }
 
 .skill-icon {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 1rem;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE MOBILE)
+   ========================================= */
+
+@media (max-width: 991px) {
+    /* 1. Atur Ulang Header/Navbar */
+    .header {
+        padding: 15px 5%;
+        flex-direction: column; 
+        background: #031540; 
+    }
+
+    .navbar a {
+        display: inline-block;
+        margin: 10px 10px; 
+        font-size: 14px;
+    }
+
+    /* 2. Perbaiki Home Section */
+    .home {
+        flex-direction: column-reverse; /* Gambar di atas, Teks di bawah */
+        height: auto; 
+        padding: 150px 5% 50px; /* Padding atas ditambah agar tidak ketutup navbar */
+        gap: 30px;
+        background: #031540; /* Matikan gradien miring di HP biar rapi */
+    }
+
+    /* Perbaiki Lingkaran Gambar Profil */
+    .home-image {
+        width: 280px;
+        height: 280px;
+        margin-left: 0;
+        border: 10px solid #fff;
+    }
+
+    .home-image img {
+        width: 310px;
+    }
+
+    /* Perbaiki Teks Home */
+    .home-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 32px;
+    }
+
+    .home-sci {
+        justify-content: center;
+    }
+
+    /* 3. Perbaiki About Section */
+    .about {
+        flex-direction: column;
+        padding: 50px 5%;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .about-img img {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* 4. Perbaiki Padding Section Lainnya */
+    .portfolio, .skills, .contact {
+        padding: 50px 5%;
+    }
+
+    .portfolio .heading, 
+    .skills .heading, 
+    .about-content .heading {
+        font-size: 32px;
+    }
+    
+    /* Input form full width */
+    .contact .input-box input,
+    .contact textarea {
+        width: 100%;
+    }
 }
