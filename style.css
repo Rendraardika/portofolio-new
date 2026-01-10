@@ -56,7 +56,7 @@ html {
     background: linear-gradient(-90deg, #031540 65%, #fff 35%);
 }
 
-/* Gambar di sisi kiri */
+/* Gambar di sisi kiri (Desktop) */
 .home-image {
     position: relative;
     width: 400px;
@@ -87,6 +87,11 @@ html {
     filter: brightness(1.25) contrast(1.15) drop-shadow(0 0 25px rgba(0, 171, 240, 0.6));
 }
 
+/* Gambar khusus Mobile (Default Hidden) */
+.img-mobile {
+    display: none;
+}
+
 /* Konten sisi kanan */
 .home-content {
     max-width: 600px;
@@ -95,7 +100,7 @@ html {
 }
 .home-content h1 {
     display: block;
-    white-space: normal; /* SUDAH DIPERBAIKI: Agar teks turun ke bawah di layar kecil */
+    white-space: normal; 
     font-size: 48px; 
     line-height: 1.2;
 }
@@ -538,6 +543,21 @@ html {
     margin-bottom: 1rem;
 }
 
+/* ======== FOOTER ======== */
+.footer {
+    display: flex;
+    justify-content: center; /* Ini yang bikin posisi di tengah */
+    align-items: center;
+    padding: 2rem 10%;
+    background: #031540;
+    color: #fff;
+}
+
+.footer-text p {
+    font-size: 1.1rem;
+    text-align: center; /* Pastikan teks rata tengah kalau layar kecil */
+}
+
 /* =========================================
    MEDIA QUERIES (RESPONSIVE MOBILE)
    ========================================= */
@@ -558,23 +578,29 @@ html {
 
     /* 2. Perbaiki Home Section */
     .home {
-        flex-direction: column-reverse; /* Gambar di atas, Teks di bawah */
+        flex-direction: column; /* Ubah dari column-reverse jadi column biasa */
         height: auto; 
-        padding: 150px 5% 50px; /* Padding atas ditambah agar tidak ketutup navbar */
-        gap: 30px;
-        background: #031540; /* Matikan gradien miring di HP biar rapi */
+        padding: 130px 5% 50px;
+        gap: 20px;
+        background: #031540; /* Matikan gradien miring di HP */
     }
 
-    /* Perbaiki Lingkaran Gambar Profil */
-    .home-image {
+    /* Sembunyikan Foto Desktop (yang lingkaran besar di kiri) */
+    .home > .home-image {
+        display: none;
+    }
+
+    /* Tampilkan Foto Mobile (yang kita selipkan di tengah teks) */
+    .img-mobile {
+        display: flex; /* Munculkan */
         width: 280px;
         height: 280px;
-        margin-left: 0;
         border: 10px solid #fff;
+        margin: 30px auto; /* Posisi di tengah (center) */
     }
 
-    .home-image img {
-        width: 310px;
+    .img-mobile img {
+        width: 310px; /* Ukuran gambar di dalam lingkaran */
     }
 
     /* Perbaiki Teks Home */
@@ -586,9 +612,16 @@ html {
     .home-content h1 {
         font-size: 32px;
     }
+    
+    .home-content p {
+        font-size: 15px;
+        margin-bottom: 10px; /* Jarak antara teks deskripsi dan foto */
+    }
 
     .home-sci {
         justify-content: center;
+        margin-top: 10px; /* Jarak antara foto dan logo sosmed */
+        margin-bottom: 20px;
     }
 
     /* 3. Perbaiki About Section */
@@ -605,7 +638,7 @@ html {
     }
     
     /* 4. Perbaiki Padding Section Lainnya */
-    .portfolio, .skills, .contact {
+    .portfolio, .skills, .contact, .footer {
         padding: 50px 5%;
     }
 
@@ -620,19 +653,9 @@ html {
     .contact textarea {
         width: 100%;
     }
-}
-/* ======== FOOTER ======== */
-.footer {
-    display: flex;
-    justify-content: center; /* Ini yang bikin posisi di tengah */
-    align-items: center;
-    padding: 2rem 10%;
-    background: #031540;
-    color: #fff;
-}
 
-.footer-text p {
-    font-size: 1.1rem;
-    text-align: center; /* Pastikan teks rata tengah kalau layar kecil */
+    /* Footer Text Kecilkan dikit */
+    .footer-text p {
+        font-size: 0.9rem;
+    }
 }
-
