@@ -621,3 +621,18 @@ html {
         width: 100%;
     }
 }
+/* ======== FOOTER ======== */
+.footer {
+    display: flex;
+    justify-content: center; /* Ini yang bikin posisi di tengah */
+    align-items: center;
+    padding: 2rem 10%;
+    background: #031540;
+    color: #fff;
+}
+
+.footer-text p {
+    font-size: 1.1rem;
+    text-align: center; /* Pastikan teks rata tengah kalau layar kecil */
+}
+
