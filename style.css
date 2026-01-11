@@ -80,21 +80,30 @@ html {
 }
 
 .home-image img {
-    /* PERBAIKAN: Posisi gambar relatif terhadap lingkaran induknya */
-    width: 100%;  /* Full width container */
-    height: 100%; /* Full height container */
-    object-fit: cover;
-    border-radius: 50%;
-    transform: scale(1.1); /* Sedikit zoom biar full */
-    transform-origin: bottom center; /* Zoom dari bawah */
+    /* Atur width lebih dari 100% biar gambar membesar (zoom in) */
+    width: 120%;  /* Coba mainkan angka ini (misal 115% - 130%) */
+    height: auto; /* Biar proforsional */
+    
+    /* Styling standar lainnya tetap sama */
+    position: relative; 
+    z-index: 10;
+    
+    /* Gunakan transform untuk menggeser posisi kalau masih kurang pas */
+    /* translateY minus (-) untuk ke atas, plus (+) untuk ke bawah */
+    transform: translateY(-10px); 
+    
+    border-radius: 50%; /* Opsional, kalau fotonya kotak */
     filter: brightness(1.15) contrast(1.1) drop-shadow(0 0 20px rgba(0, 171, 240, 0.45));
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+/* Tambahkan efek hover biar interaktif */
 .home-image img:hover {
-    transform: scale(1.15); /* Efek zoom saat hover */
+    transform: translateY(-15px) scale(1.05); /* Sedikit naik & zoom pas hover */
     filter: brightness(1.25) contrast(1.15) drop-shadow(0 0 25px rgba(0, 171, 240, 0.6));
 }
+
+
 
 /* Gambar khusus Mobile (Default Hidden) */
 .img-mobile {
