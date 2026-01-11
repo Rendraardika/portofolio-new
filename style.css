@@ -11,6 +11,8 @@ html {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+/* ======== HEADER ======== */
 .header {
     position: fixed;
     top: 0;
@@ -19,14 +21,14 @@ html {
     padding: 20px 10%;
     background: rgba(3, 21, 64, 0.9);
     display: flex;
-    justify-content: flex-end; /* biar langsung ke kanan */
+    justify-content: flex-end; /* Navbar dikanan */
     align-items: center;
     z-index: 100;
     backdrop-filter: blur(10px);
 }
 
 .logo {
-    display: none; /* sembunyikan total */
+    display: none; 
 }
 
 /* Navbar */
@@ -45,45 +47,52 @@ html {
     transform: scale(1.1);
 }
 
-/* Section Home */
+/* ======== SECTION HOME (PERBAIKAN UTAMA) ======== */
 .home {
-    height: 100vh;
+    min-height: 100vh; /* Pakai min-height biar aman */
     display: flex;
-    justify-content: center; /* ini bikin center horizontal */
-    align-items: center; /* ini bikin center vertical */
-    gap: 70px; /* jarak antara foto dan teks */
+    justify-content: center; /* Center Horizontal */
+    align-items: center;     /* Center Vertical */
+    gap: 4rem; /* Pakai rem agar jaraknya responsif, bukan pixel mati */
     padding: 0 10%;
-    background: linear-gradient(-90deg, #031540 65%, #fff 35%);
+    /* Gradien latar belakang */
+    background: linear-gradient(-90deg, #031540 60%, #fff 40%);
+    overflow: hidden; /* Mencegah scrollbar horizontal jika ada elemen meleset */
 }
 
 /* Gambar di sisi kiri (Desktop) */
 .home-image {
     position: relative;
+    /* PERBAIKAN: Hapus margin-left manual agar flexbox bekerja sempurna */
+    /* margin-left: 50px; <-- INI PENYEBABNYA, HAPUS SAJA */
+    
     width: 400px;
     height: 400px;
     background: #031540;
     border-radius: 50%;
-    border: 25px solid #fff;
+    border: 25px solid #fff; /* Lingkaran putih */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end; /* Align bottom supaya gambar nempel bawah */
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-    margin-left: 50px;
-    overflow: hidden;
+    overflow: hidden; /* Pastikan foto terpotong mengikuti lingkaran */
+    flex-shrink: 0; /* Agar lingkaran tidak gepeng saat layar mengecil */
 }
 
 .home-image img {
-    position: absolute;
-    bottom: 0px; /* sedikit turun agar kepala tidak terpotong */
-    width: 450px; /* perbesar agar pas dalam lingkaran */
-    border-radius: 50%;
+    /* PERBAIKAN: Posisi gambar relatif terhadap lingkaran induknya */
+    width: 100%;  /* Full width container */
+    height: 100%; /* Full height container */
     object-fit: cover;
+    border-radius: 50%;
+    transform: scale(1.1); /* Sedikit zoom biar full */
+    transform-origin: bottom center; /* Zoom dari bawah */
     filter: brightness(1.15) contrast(1.1) drop-shadow(0 0 20px rgba(0, 171, 240, 0.45));
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .home-image img:hover {
-    transform: scale(1.03);
+    transform: scale(1.15); /* Efek zoom saat hover */
     filter: brightness(1.25) contrast(1.15) drop-shadow(0 0 25px rgba(0, 171, 240, 0.6));
 }
 
@@ -96,28 +105,32 @@ html {
 .home-content {
     max-width: 600px;
     color: #fff;
-    text-align: left; /* ganti right → left */
+    text-align: left;
 }
+
 .home-content h1 {
     display: block;
-    white-space: normal; 
     font-size: 48px; 
     line-height: 1.2;
+    margin-bottom: 10px;
 }
+
+/* PERBAIKAN TEKS GLITCH */
 .home-content h3 {
-    font-size: 30px;
-    color:transparent;
-    -webkit-text-stroke: 0.5px #fff;
+    font-size: 32px;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff; /* Outline putih */
     background-image: linear-gradient(#00abf0, #00abf0);
     background-repeat: no-repeat;
     -webkit-background-clip: text;
-    background-position: -410px 0;
+    background-position: -600px 0; /* Jauhkan posisi awal */
     animation: animateText 6s linear infinite;
 }
 
 @keyframes animateText {
     0%, 95%, 100% {
-        background-position: -410px 0;
+        background-position: -600px 0;
     }
     65%, 85% {
         background-position: 0 0;
@@ -128,12 +141,13 @@ html {
     font-size: 16px;
     margin: 20px 0 40px;
     color: #fff;
+    line-height: 1.6;
 }
 
 /* Ikon Sosial */
 .home-sci {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start; /* Rata kiri mengikuti teks */
     margin-bottom: 30px;
 }
 
@@ -149,7 +163,8 @@ html {
     font-size: 20px;
     color: #00abf0;
     text-decoration: none;
-    margin-left: 15px;
+    margin-right: 15px; /* Jarak antar icon ke kanan */
+    margin-left: 0;
     transition: all 0.3s ease;
 }
 
@@ -157,10 +172,7 @@ html {
     background: #00abf0;
     color: #fff;
     transform: scale(1.1);
-}
-
-.home-sci a:active {
-    transform: scale(0.9);
+    box-shadow: 0 0 10px #00abf0;
 }
 
 /* Tombol Download */
@@ -175,11 +187,13 @@ html {
     text-decoration: none;
     font-weight: 600;
     transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 0 10px rgba(0, 171, 240, 0.5);
 }
 
 .btn:hover {
     background: #008ecf;
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 171, 240, 0.8);
 }
 
 .btn:active {
@@ -204,7 +218,8 @@ html {
 }
 
 .about-img img {
-    width: 350px;
+    width: 100%;
+    max-width: 350px; /* Batasi maksimal lebar */
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0, 171, 240, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -245,11 +260,6 @@ html {
     transition: 0.3s ease;
 }
 
-.about-content .btn:hover {
-    background: #008ecf;
-    transform: scale(1.05);
-}
-
 /* ======== SERVICES SECTION ======== */
 .services {
     background: #031540;
@@ -269,8 +279,8 @@ html {
 
 .services-container {
     display: flex;
-    justify-content: center; /* pusatkan card */
-    gap: 3rem; /* jarak antar card */
+    justify-content: center;
+    gap: 2rem;
     flex-wrap: wrap;
 }
 
@@ -278,7 +288,7 @@ html {
     background: #04255c;
     border-radius: 12px;
     padding: 30px;
-    width: 330px; /* sedikit lebih besar biar proporsional */
+    width: 320px;
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 171, 240, 0.3);
     transition: 0.3s ease;
@@ -319,23 +329,21 @@ html {
 
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
 .portfolio-card {
     background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
-    border-radius: 12px; 
-}
-
-.portfolio-card:hover {
-    transform: translateY(-10px);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .portfolio-thumb {
     position: relative;
     height: 220px;
-    overflow: hidden;
+    width: 100%;
 }
 
 .portfolio-thumb img {
@@ -344,11 +352,10 @@ html {
     object-fit: cover;
 }
 
-/* Hover overlay + 1 button */
 .portfolio-hover {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.55);
+    background: rgba(0,0,0,0.6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -363,24 +370,26 @@ html {
 .icon-btn {
     width: 60px;
     height: 60px;
-    background: #7b3ff3;
+    background: #00abf0;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 28px;
     color: white;
     transition: 0.2s ease;
+    text-decoration: none;
 }
 
 .icon-btn:hover {
-    transform: scale(1.15);
-    background: #9c6aff;
+    transform: scale(1.1);
+    background: #008ecf;
 }
 
 .portfolio-info {
     padding: 20px;
     color: white;
+    text-align: left;
 }
 
 .portfolio-info h3 {
@@ -390,19 +399,19 @@ html {
 
 .portfolio-info p {
     font-size: 14px;
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
-/* Badge */
 .tech-badges span {
     display: inline-block;
-    background: rgba(130, 80, 255, 0.22);
-    color: #cbaaff;
-    padding: 6px 12px;
+    background: rgba(0, 171, 240, 0.2);
+    color: #00abf0;
+    padding: 5px 12px;
     border-radius: 20px;
-    margin-right: 8px;
-    margin-top: 5px;
-    font-size: 13px;
+    margin-right: 5px;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 /* ======== CONTACT SECTION ======== */
@@ -435,13 +444,13 @@ html {
 
 .contact .input-box input,
 .contact textarea {
-    width: 48%;
-    padding: 12px;
+    width: 49%;
+    padding: 15px;
     font-size: 16px;
     color: #031540;
     background: #fff;
     border-radius: 6px;
-    margin: 10px 0;
+    margin-bottom: 15px;
     border: none;
     outline: none;
 }
@@ -454,22 +463,11 @@ html {
 
 .contact .btn {
     margin-top: 10px;
-    background: #00abf0;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 6px;
-    font-weight: 600;
     cursor: pointer;
     border: none;
-    transition: 0.3s ease;
 }
 
-.contact .btn:hover {
-    background: #008ecf;
-    transform: scale(1.05);
-}
-
-/* ================= SKILL SLIDER ================= */
+/* ======== SKILL SLIDER ======== */
 .skills {
     background: #031540;
     padding: 90px 10%;
@@ -494,21 +492,19 @@ html {
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 171, 240, 0.25);
     transition: 0.3s ease;
+    height: 100%;
 }
 
 .skill-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 0 30px rgba(0, 171, 240, 0.45);
 }
 
 .skill-icon {
-    width: 90px;
-    height: auto;
-    margin-bottom: 15px;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    backface-visibility: hidden;
-    transform: translateZ(0);
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
 }
 
 .skill-card h3 {
@@ -521,141 +517,100 @@ html {
     opacity: 0.85;
 }
 
-/* Nav button warna biru */
-.swiper-button-prev,
-.swiper-button-next {
-    color: #00abf0;
-}
-
-.swiper-pagination-bullet {
-    background: #00abf0;
-}
-.tableau-icon {
-    height: 70px !important;
-    width: auto;
-    filter: drop-shadow(0 0 4px rgba(0,0,0,0.4));
-}
-
-.skill-icon {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-}
-
 /* ======== FOOTER ======== */
 .footer {
-    display: flex;
-    justify-content: center; /* Ini yang bikin posisi di tengah */
-    align-items: center;
-    padding: 2rem 10%;
     background: #031540;
+    padding: 2rem 10%;
     color: #fff;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .footer-text p {
-    font-size: 1.1rem;
-    text-align: center; /* Pastikan teks rata tengah kalau layar kecil */
+    font-size: 1rem;
 }
 
 /* =========================================
-   MEDIA QUERIES (RESPONSIVE MOBILE)
+   MEDIA QUERIES (RESPONSIVE)
    ========================================= */
 
 @media (max-width: 991px) {
-    /* 1. Atur Ulang Header/Navbar */
+    /* 1. Header/Navbar */
     .header {
         padding: 15px 5%;
-        flex-direction: column; 
-        background: #031540; 
+        background: #031540;
     }
 
-    .navbar a {
-        display: inline-block;
-        margin: 10px 10px; 
-        font-size: 14px;
-    }
-
-    /* 2. Perbaiki Home Section */
+    /* 2. Home Section Mobile */
     .home {
-        flex-direction: column; /* Ubah dari column-reverse jadi column biasa */
-        height: auto; 
-        padding: 130px 5% 50px;
-        gap: 20px;
-        background: #031540; /* Matikan gradien miring di HP */
+        flex-direction: column-reverse; /* Gambar di atas teks di Mobile */
+        justify-content: center;
+        height: auto;
+        padding: 120px 5% 50px;
+        gap: 30px;
+        background: #031540; /* Reset gradient jadi solid blue */
     }
 
-    /* Sembunyikan Foto Desktop (yang lingkaran besar di kiri) */
+    /* Sembunyikan gambar desktop yang bermasalah di mobile */
     .home > .home-image {
-        display: none;
+        display: none; 
     }
 
-    /* Tampilkan Foto Mobile (yang kita selipkan di tengah teks) */
+    /* Tampilkan gambar Mobile */
     .img-mobile {
-        display: flex; /* Munculkan */
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 280px;
         height: 280px;
-        border: 10px solid #fff;
-        margin: 30px auto; /* Posisi di tengah (center) */
+        border: 8px solid #fff;
+        border-radius: 50%;
+        margin: 0 auto;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0,171,240,0.5);
     }
 
     .img-mobile img {
-        width: 310px; /* Ukuran gambar di dalam lingkaran */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    /* Perbaiki Teks Home */
+    /* Home Content Mobile */
     .home-content {
-        max-width: 100%;
         text-align: center;
+        width: 100%;
     }
 
     .home-content h1 {
         font-size: 32px;
     }
     
-    .home-content p {
-        font-size: 15px;
-        margin-bottom: 10px; /* Jarak antara teks deskripsi dan foto */
+    .home-content h3 {
+        font-size: 24px;
+        background-position: -400px 0; /* Sesuaikan animasi text mobile */
     }
 
     .home-sci {
         justify-content: center;
-        margin-top: 10px; /* Jarak antara foto dan logo sosmed */
-        margin-bottom: 20px;
+        margin-right: 0;
     }
 
-    /* 3. Perbaiki About Section */
+    .home-sci a {
+        margin: 0 8px; /* Reset margin */
+    }
+
+    /* 3. Section Padding */
+    .about, .services, .portfolio, .skills, .contact {
+        padding: 60px 5%;
+    }
+
     .about {
         flex-direction: column;
-        padding: 50px 5%;
-        gap: 30px;
         text-align: center;
     }
 
-    .about-img img {
+    .contact .input-box input {
         width: 100%;
-        max-width: 300px;
-    }
-    
-    /* 4. Perbaiki Padding Section Lainnya */
-    .portfolio, .skills, .contact, .footer {
-        padding: 50px 5%;
-    }
-
-    .portfolio .heading, 
-    .skills .heading, 
-    .about-content .heading {
-        font-size: 32px;
-    }
-    
-    /* Input form full width */
-    .contact .input-box input,
-    .contact textarea {
-        width: 100%;
-    }
-
-    /* Footer Text Kecilkan dikit */
-    .footer-text p {
-        font-size: 0.9rem;
     }
 }
