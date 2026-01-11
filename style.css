@@ -607,7 +607,7 @@ html {
     .img-mobile img {
         width: 110%; /* Zoom standar */
         /* PERBAIKAN: TURUNKAN GAMBAR (Hapus minus besar) */
-        transform: translateY(25px); /* Cuma naik sedikit biar leher kelihatan */
+        transform: translateY(15px); /* Cuma naik sedikit biar leher kelihatan */
         object-fit: cover;
     }
 
